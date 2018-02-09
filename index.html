@@ -1,199 +1,34 @@
 <html prefix="og: http://ogp.me/ns#">
 <head>
-	<title>miriorama - endless visions</title>
-  <meta name="description" content="Endless visions">
+	<title>Miriorama - Infinite visions</title>
+  <meta name="description" content="Miriorama, from the Greek: infinite visions">
   
-  <meta property="og:title" content="miriorama - Endless visions" />
-  <meta property="og:description" content="Endless visions"  />
-  <meta property="og:image" content="http://miriorama.com/miriorama.jpg" />
+  <meta property="og:title" content="Miriorama - Infinite visions" />
+  <meta property="og:description" content="Miriorama, from the Greek: infinite visions"  />
+  <meta property="og:image" content="http://miriorama.com/logo.svg" />
   <meta property='og:url' content="http://miriorama.com" />
   <meta property="og:site_name" content="miriorama" />
   <meta property="og:type" content="website" />
 
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-  <style>
-    html, body { 
-    	margin: 0; 
-    	padding: 0; 
-    	overflow: hidden; 
-    	background-color: #eee;
+	<style>
+		body {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+		}
+
+    img.logo {
+      width: 80vmin;
     }
+	</style>
 
-		#center {
-	    width: 30vw;
-	    height: 30vw;
-	    max-height: 30vh;
-	    max-width: 30vh;
-	    margin: auto;
-	    position: absolute;
-	    top: 0;
-	    bottom: 0;
-	    left: 0;
-	    right: 0;
-
-	    display: flex;
-		  justify-content: center;
-		  align-items: center;
-		}
-
-		.text {
-	    position: relative;
-	    top: -2vh;	    
-    font-family: 'Inconsolata', monospace;
-	    font-size: 18vmin;
-	    color: rgba(255,255,255, 0.5);
-	    cursor: default;
-		}
-
-		.unselectable {
-		  -webkit-touch-callout: none; 
-		  -webkit-user-select: none;
-		  -khtml-user-select: none;
-		  -moz-user-select: none;
-		  -ms-user-select: none;
-		  user-select: none;
-		}
-  </style>
 </head>
 <body>
-	<div id="center">
-		<div class="unselectable text" unselectable="on">miriorama</div>
-	</div>
-	<div id="container"></div>
-	
-  <script src="vendors/three.js/three.min.js"></script>
-	<script>
-		'use strict';
-	  var wh = window.innerHeight;
-	  var ww = window.innerWidth;
-		var container = document.getElementById('container');
-		var center = document.getElementById('center');
-
-		var radius = 15;
-		var mouseX = 0;
-		var mouseY = 0;
-		var cubes = [];
-		var isReset = false;
-		var scene = new THREE.Scene();
-
-		var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-	  renderer.setClearColor(0x000000, 0);
-		renderer.setSize(ww, wh);
-	
-		var camera = new THREE.OrthographicCamera(ww / - 2, ww / 2, wh / 2, wh / - 2, -100, 100);
-		camera.aspect = ww / wh;
-		camera.position.z = 10;
-		camera.zoom = 5;
-		camera.updateProjectionMatrix();
-
-		window.addEventListener('resize', onWindowResize, false );
-  	window.addEventListener('mousemove', function(event) { onDocumentMouseMove(event.clientX, event.clientY)}, false );
-		container.addEventListener('mouseover', function(){isReset = false;});
-  	container.addEventListener('mouseleave', function(){isReset = true;	mouseX = 0; mouseY = 0;});
-  	center.addEventListener('mouseover', function(){isReset = true;});
-  	center.addEventListener('mouseleave', function(){isReset = false;});
-
-  	document.addEventListener('touchstart', function(e) {
-        onDocumentMouseMove(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
-    }, false);
-
-    document.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-        onDocumentMouseMove(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
-    }, false);
-
-    document.addEventListener('touchend', function(e) {
-        mouseX = 0; mouseY = 0;
-    }, false);
-
-		container.appendChild(renderer.domElement);
-
-		paint();
-		render();
-
-		function render() {
-			requestAnimationFrame(render);
-
-			radius += (Math.abs(proportion(mouseX, ww/2, 5)) - radius + 15) * 0.03;
-			for (var i = 0; i < cubes.length; i++) {
-		  		cubes[i].position.x = radius * Math.sin(((2 * Math.PI) / 6) * i);
-	    		cubes[i].position.y = radius * Math.cos(((2 * Math.PI) / 6) * i);
-			}
-
-			camera.rotation.y += (THREE.Math.degToRad(proportion(mouseX, ww/2, 30)) - camera.rotation.y) * 0.05;
-			camera.rotation.x += (THREE.Math.degToRad(proportion(mouseY, wh/2, 30)) - camera.rotation.x) * 0.05;
-    	camera.updateProjectionMatrix();
-
-			renderer.render(scene, camera);
-		};
-
-		function paint() {
-			var material = new THREE.MeshBasicMaterial({color: 0xffffff, vertexColors: THREE.FaceColors });
-			
-			var lato = 10.61;
-		  var angle = 0;
-		  var n = 6;
-		  var colors = [6, 2, 8, 4, 0, 8];
-
-		  var step = (2 * Math.PI) / n;
-		  for (var i = 0; i < n; i++) { 
-		  	var x = radius * Math.sin(angle);
-		    var y = radius * Math.cos(angle);
-
-		    var geometry = new THREE.BoxGeometry(lato, lato, lato);
-				for ( var f = 0; f < geometry.faces.length; f ++ ) {
-					if (f == colors[i] || f == colors[i] + 1) {
-				    geometry.faces[ f].color.setHex( 0xababab );
-					} else {
-				    geometry.faces[ f ].color.setHex( 0x444444 );
-					}
-				}
-				geometry.colorsNeedUpdate = true;
-
-		    var cube = new THREE.Mesh(geometry, material);
-
-				cube.position.x = x;
-				cube.position.y = y;
-
-				cube.rotation.y = THREE.Math.degToRad(54.736 * (((i+1) % 2) > 0 ? -1: 1));
-				cube.rotation.z = THREE.Math.degToRad(45);
-
-				scene.add(cube);
-				cubes.push(cube);
-		    angle += step;
-			};
-		}
-
-		function onWindowResize() {
-			ww = window.innerWidth;
-		  wh = window.innerHeight;
-
-			camera.aspect = ww / wh;
-			camera.left = ww / - 2;
-			camera.right = ww / 2;
-			camera.top = wh / 2;
-			camera.bottom = wh / - 2;
-	    camera.updateProjectionMatrix();
-
-	  	renderer.setSize(ww, wh);
-		}
-
-		function onDocumentMouseMove(x, y) {
-			if (!isReset){
-				mouseX = (x - window.innerWidth/2);
-				mouseY = (y - window.innerHeight/2);
-			} else {
-				mouseX = 0;
-				mouseY = 0;
-			}
-  	}
-
-	  function proportion(min, max, max2) {
-	    return ((min * max2)/max);
-	  }
-
-	</script>
+  <img class="logo" src="/logo.svg" />
 </body>
 </html>
