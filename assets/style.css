@@ -1,0 +1,278 @@
+body {
+			
+    margin: 0;
+
+font-family: 'Quicksand', sans-serif;
+}
+
+[hidden] {
+display: none !important;
+}
+
+section {    
+    width: 100%;
+    min-height: calc(100% - 40px);
+    padding-bottom: 40px;
+    padding-top: 40px;
+
+    background-image: url(/assets/img/logo.png);
+    background-repeat: no-repeat;
+    background-position: right 20px top 20px;
+    background-attachment: fixed;
+    background-size: 120px;
+}
+section.negative {
+    background-image: url(/assets/img/logo-white.png);
+}
+
+.logo {
+position: fixed;
+top: 20px;
+right: 20px;
+width: 120px;
+height: 54px;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.9;
+    height: 40px;
+    display: none;
+    z-index: 100;
+
+    justify-content: center;
+    align-items: center;
+}
+nav img {
+    width: 60px;
+}
+
+.footer {
+    text-align: center;
+    min-height: auto;
+    padding: 30px 0;
+    background-color: rgb(63, 63, 63);
+    color: #fff;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.fade-out {
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+
+/* INTRO */
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    flex-direction: column;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.intro h1 {
+    font-size: 6em;
+    line-height: .8em;
+    font-weight: 500;
+    margin: 0 0 0 10px;
+    white-space: nowrap;
+}
+
+.intro h2 {
+    font-size: 1.8em;
+}
+
+svg.arrow-down {
+    margin-top: 50px;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0);}
+    60% {transform: translateY(10px);}
+	100% {transform: translateY(0);}
+}
+
+/* WAVES */
+
+.waves {
+display: flex;
+justify-content: center;
+align-items: center;
+
+background-color: #005790;
+color: #dcc400;
+
+transition: 1s;
+}
+.waves-container, .parrots-container {
+display: flex;
+}
+.waves-gallery {
+width: 70vmin;
+height: 70vmin;
+box-shadow: 0 0 100px #0000003b;
+cursor: pointer;
+position: relative;
+}
+.waves-gallery img {
+    width: 100%;
+    position: absolute;
+}
+h2{
+margin-bottom: 10px;
+margin-top: 10px;
+line-height: 1em;
+font-size: 2em;
+}
+p{
+margin: 0;
+}
+
+img:focus {
+outline: 0;
+}
+.wave-description {
+margin-left: 30px;
+align-self: flex-end;
+}
+
+@media (max-width: 768px) {
+
+    .waves .waves-gallery {
+    width: 80vmin;
+    height: 80vmin;
+    }
+    
+    .waves-container {
+    flex-direction: column;
+    }
+    
+    .wave-description {
+    align-self: flex-end;
+    text-align: right;
+    }
+    
+}
+
+
+/* PARROTS */
+
+.parrots {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    background-color: #f8f7f4;
+    color: #81685c;
+    
+    transition: 1s;
+}
+
+.parrots-gallery {
+background-color: #f9f6f3;
+height: 100vh;
+width: 100vh;
+}
+.parrots-gallery img {
+height: 100%;
+width: auto;
+}
+
+.parrots-description {
+width: 38vw;
+align-self: flex-end;
+margin: 0 0 20px 30px;
+}
+
+.dot {
+height: 20px;
+width: 20px;
+background-color: #fff;
+border-radius: 50%;
+display: inline-block;
+border: 3px solid transparent;
+cursor: pointer;
+border-color: #f8f7f4;
+
+}
+.dot.selected {
+border-color: #81685c;
+}
+
+
+figure.zoom {
+background-position: 50% 50%;
+background-size: 500%;
+position: relative;
+overflow: hidden;
+cursor: pointer;
+padding: 0;
+margin: 0;
+}
+figure.zoom img:hover {
+opacity: 0;
+}
+figure.zoom img {
+transition: opacity .5s;
+display: block;
+width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .parrots {
+    flex-direction: column;
+    justify-content: center;
+    }
+    .parrots-description {
+    align-self: flex-end;
+    text-align: right;
+    width: auto;
+    margin-right: 30px;
+    margin-bottom: 0;
+    }
+    .parrots-gallery {
+    width: calc(100vw - 40px);
+    height: calc(100vw - 40px);
+    margin: 0 20px 0;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    section {
+        background-image: none !important;
+    }
+
+    .intro h1 {
+        font-size: 4em;
+    }
+    .intro h2 {
+        font-size: 1.2em;
+    }
+    .logo-container img {
+        width: 100px;
+    }
+}

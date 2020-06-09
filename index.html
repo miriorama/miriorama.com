@@ -1,31 +1,24 @@
-<html prefix="og: http://ogp.me/ns#">
+<html>
 <head>
-	<title>Miriorama - Infinite visions</title>
-  <meta name="description" content="Miriorama, from the Greek: infinite visions">
+	<title>Miriorama - Generative arts</title>
+  <meta name="description" content="Miriorama, from the Greek: infinite visions - Generative arts">
   
-  <meta property="og:title" content="Miriorama - Infinite visions" />
-  <meta property="og:description" content="Miriorama, from the Greek: infinite visions"  />
-  <meta property="og:image" content="http://miriorama.com/logo.svg" />
-  <meta property='og:url' content="http://miriorama.com" />
-  <meta property="og:site_name" content="miriorama" />
+  <meta property="og:title" content="Miriorama - Generative arts" />
+  <meta property="og:description" content="Miriorama, from the Greek: infinite visions - Generative arts"  />
+  <meta property="og:image" content="https://miriorama.com/img/cover.jpg" />
+  <meta property='og:url' content="https://miriorama.com" />
+  <meta property="og:site_name" content="Miriorama - Generative arts" />
   <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="assets/img/logo-miriorama.png" >
 
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 
-	<style>
-		body {
-			height: 100%;
-			width: 100%;
-			margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-		}
-
-    img.logo {
-      width: 80vmin;
-    }
-	</style>
+  <link rel="stylesheet" type="text/css" href="assets/style.css" />  
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/slick/slick.css" />
+  <script type="text/javascript" src="assets/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="assets/slick/slick.min.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113902862-1"></script>
@@ -38,6 +31,173 @@
   </script>
 </head>
 <body>
-  <img class="logo" src="/logo.svg" />
+  <section class="intro">
+    <div class="logo-container">
+      <img src="/assets/img/logo-miriorama.svg" alt="Miriorama">
+      <h1>MIRIO<br>RAMA</h1>
+    </div>
+    <h2>From the Greek, infinite visions.</h2>
+    <a href="#section-waves"><svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg></a>
+  </section>
+
+  <section id="section-waves" class="waves negative">
+    <div class="waves-container">
+      <div class="waves-gallery">
+        <img src="assets/img/waves/miriorama-7.jpg" data-background="#005790" data-color="#dcc400">
+        <img src="assets/img/waves/miriorama-6.jpg" data-background="#d1adc7" data-color="#1b11ae">
+        <img src="assets/img/waves/miriorama-5.jpg" data-background="#196cca" data-color="#c6bc8b">
+        <img src="assets/img/waves/miriorama-4.jpg" data-background="#cb12d2" data-color="#5bc0a0">
+        <img src="assets/img/waves/miriorama-3.jpg" data-background="#6e1940" data-color="#73f5db">
+        <img src="assets/img/waves/miriorama-2.jpg" data-background="#e93f04" data-color="#40e775">
+        <img src="assets/img/waves/miriorama-1.jpg" data-background="#370673" data-color="#8fbe30">
+      </div>
+      
+      <div class="wave-description">
+        <h2>MIRIORAMA<br>Waves</h2>
+        <p>2018</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="parrots">
+    <div class="parrots-gallery" data-parrot="pink">
+      <figure class="zoom" style="background-image: url(assets/img/parrots/1.png)">
+        <img src="assets/img/parrots/1.png" />
+      </figure>
+      <figure class="zoom" style="background-image: url(assets/img/parrots/2.png)">
+        <img src="assets/img/parrots/2.png" />
+      </figure>
+      <figure class="zoom" style="background-image: url(assets/img/parrots/4.png)">
+        <img src="assets/img/parrots/4.png" />
+      </figure>
+      <figure class="zoom" style="background-image: url(assets/img/parrots/5.png)">
+        <img src="assets/img/parrots/5.png" />
+      </figure>
+      <figure class="zoom" style="background-image: url(assets/img/parrots/6.png)">
+        <img src="assets/img/parrots/6.png" />
+      </figure>
+      <figure class="zoom" style="background-image: url(assets/img/parrots/7.png)">
+        <img src="assets/img/parrots/7.png" />
+      </figure>
+    </div>
+    
+    <div class="parrots-description">
+      <span class="dot selected" data-parrot="0" style="background: linear-gradient(60deg, #e66465 50%, #c5d76f 51%);"></span>
+      <span class="dot" data-parrot="2" style="background: linear-gradient(60deg, #ed6b46 50%, #497345 51%);"></span>
+      <h2>MIRIORAMA<br>Parrots</h2>
+      <p>2020</p>
+    </div>
+  </section>
+
+  <section class="footer">
+    <small>
+    2020 © Miriorama 
+    <br>
+    <a href="mailto:info@miriorama.com">info@miriorama.com</a>
+    <br><a href="https://www.instagram.com/mirioramacom/" target="_blank">@miriorama</a>
+    </small>
+  </section>
+  
+
+  <script type="text/javascript">    
+    let UTILS = (function() {
+        let utils = {};
+
+        utils.zoom = function(e) {        
+          let zoomer = e.currentTarget;
+          e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
+          e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
+          x = offsetX/zoomer.offsetWidth*100
+          y = offsetY/zoomer.offsetHeight*100
+          zoomer.style.backgroundPosition = x + '% ' + y + '%';
+        }
+
+        return utils;
+    })();
+
+    let WAVES = (function() {
+      let waves = {};   
+
+      waves.init = function() {
+        $('.waves-gallery').slick({
+          autoplay: true,
+          autoplaySpeed: 5000,
+          speed: 1000,
+          arrows: false,
+          fade: true,
+          pauseOnHover: false
+        });
+        $('.waves-gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+          let $el = $('.waves-gallery img:eq(' + nextSlide + ')');
+          $('.waves').css('background-color', $el.attr('data-background'));
+          $('.waves').css('color', $el.attr('data-color'));
+          console.log(nextSlide);
+        });
+
+        $('.waves-gallery').on('click', function() {
+          $('.waves-gallery').slick('slickNext');
+        });
+      }
+        
+      return waves;
+    })();
+
+      let PARROTS = (function() {
+        let parrots = {};
+
+        parrots.init = function() {
+          let $gallery = $('.parrots .parrots-gallery');
+          $gallery.slick({
+            autoplay: true,
+            autoplaySpeed: 5000,
+            speed: 1000,
+            arrows: false,
+            fade: true,
+            pauseOnHover: true
+          });
+
+          $gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            let $prev;
+            $('.dot').each(function() {
+              let $dot = $(this);
+
+              if ($(this).attr('data-parrot') > nextSlide) {
+                if ($prev) {
+                  $dot = $prev;
+                }
+              };
+
+              $('.dot.selected').removeClass('selected');
+              $dot.addClass('selected');
+
+              $prev = $(this);
+            });            
+          });
+          
+          $gallery.on('click', function() {
+            $gallery.slick('slickNext');
+          });
+
+          $('.dot').on('click', function() {
+            let parrot = $(this).attr('data-parrot');
+
+            $('.dot.selected').removeClass('selected');
+            $(this).addClass('selected');
+            $('.parrots .parrots-gallery').slick('slickGoTo', parrot);
+          });
+
+          $('.parrots figure').on('mousemove', function(e) {
+            UTILS.zoom(e);
+          });
+        }
+
+        return parrots;
+      })();
+
+      $(function(){
+        WAVES.init();
+        PARROTS.init();
+      });
+  </script>
 </body>
 </html>
