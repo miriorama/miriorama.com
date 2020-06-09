@@ -80,6 +80,7 @@ nav img {
     align-items: center;
     background-image: none;
     flex-direction: column;
+    color: #3f3f3f;
 }
 
 .logo-container {
@@ -87,6 +88,13 @@ nav img {
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+.logo-container svg {
+    width: 150px;
+    height: 150px;
+}
+.logo-container svg path, .logo-container svg line  {
+    stroke: #3f3f3f;
 }
 
 .intro h1 {
@@ -105,6 +113,7 @@ svg.arrow-down {
     margin-top: 50px;
     animation: bounce 2s infinite;
     cursor: pointer;
+    fill: #3f3f3f;
 }
 
 @keyframes bounce {
@@ -272,7 +281,7 @@ width: 100%;
     .intro h2 {
         font-size: 1.2em;
     }
-    .logo-container img {
+    .logo-container svg {
         width: 100px;
     }
 }
