@@ -41,6 +41,30 @@
     <a href="#section-waves"><svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg></a>
   </section>
 
+  <section id="section-cliffs" class="cliffs">
+    <div class="cliffs-container">
+      <div class="cliffs-gallery">
+        <img src="assets/img/cliffs/cliff-10.jpg" data-color="#FDA283">
+        <img src="assets/img/cliffs/cliff-3.jpg" data-color="#C2B2F3">
+        <img src="assets/img/cliffs/cliff-8.jpg" data-color="#216A9F">
+        <img src="assets/img/cliffs/cliff-14.jpg" data-color="#6EA7A0">
+        <img src="assets/img/cliffs/cliff-6.jpg" data-color="#78A3C6">
+        <img src="assets/img/cliffs/cliff-13.jpg" data-color="#9ACFC7">
+        <img src="assets/img/cliffs/cliff-16.jpg" data-color="#B9375D">
+        <img src="assets/img/cliffs/cliff-1.jpg" data-color="#9D9990">
+        <img src="assets/img/cliffs/cliff-5.jpg" data-color="#D93F23">
+        <img src="assets/img/cliffs/cliff-11.jpg" data-color="#EA2C58">
+        
+        
+      </div>
+      
+      <div class="cliffs-description">
+        <h2>MIRIORAMA<br>Cliffs</h2>
+        <p>2020</p>
+      </div>
+    </div>
+  </section>
+
   <section id="section-waves" class="waves negative">
     <div class="waves-container">
       <div class="waves-gallery">
@@ -62,22 +86,22 @@
 
   <section class="parrots">
     <div class="parrots-gallery" data-parrot="pink">
-      <figure class="zoom" style="background-image: url(assets/img/parrots/1.jpg)">
+      <figure style="background-image: url(assets/img/parrots/1.jpg)">
         <img src="assets/img/parrots/1.jpg" />
       </figure>
-      <figure class="zoom" style="background-image: url(assets/img/parrots/2.jpg)">
+      <figure style="background-image: url(assets/img/parrots/2.jpg)">
         <img src="assets/img/parrots/2.jpg" />
       </figure>
-      <figure class="zoom" style="background-image: url(assets/img/parrots/4.jpg)">
+      <figure style="background-image: url(assets/img/parrots/4.jpg)">
         <img src="assets/img/parrots/4.jpg" />
       </figure>
-      <figure class="zoom" style="background-image: url(assets/img/parrots/5.jpg)">
+      <figure style="background-image: url(assets/img/parrots/5.jpg)">
         <img src="assets/img/parrots/5.jpg" />
       </figure>
-      <figure class="zoom" style="background-image: url(assets/img/parrots/6.jpg)">
+      <figure style="background-image: url(assets/img/parrots/6.jpg)">
         <img src="assets/img/parrots/6.jpg" />
       </figure>
-      <figure class="zoom" style="background-image: url(assets/img/parrots/7.jpg)">
+      <figure style="background-image: url(assets/img/parrots/7.jpg)">
         <img src="assets/img/parrots/7.jpg" />
       </figure>
     </div>
@@ -86,7 +110,7 @@
       <span class="dot selected" data-parrot="0" style="background: linear-gradient(60deg, #e66465 50%, #c5d76f 51%);"></span>
       <span class="dot" data-parrot="2" style="background: linear-gradient(60deg, #ed6b46 50%, #497345 51%);"></span>
       <h2>MIRIORAMA<br>Parrots</h2>
-      <p>2020</p>
+      <p>2019</p>
     </div>
   </section>
 
@@ -98,107 +122,8 @@
     <br><a href="https://www.instagram.com/mirioramacom/" target="_blank">@miriorama</a>
     </small>
   </section>
-  
 
-  <script type="text/javascript">    
-    let UTILS = (function() {
-        let utils = {};
-
-        utils.zoom = function(e) {        
-          let zoomer = e.currentTarget;
-          e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
-          e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
-          x = offsetX/zoomer.offsetWidth*50
-          y = offsetY/zoomer.offsetHeight*50
-          zoomer.style.backgroundPosition = x + '% ' + y + '%';
-        }
-
-        return utils;
-    })();
-
-    let WAVES = (function() {
-      let waves = {};   
-
-      waves.init = function() {
-        $('.waves-gallery').slick({
-          autoplay: true,
-          autoplaySpeed: 3000,
-          speed: 1000,
-          arrows: false,
-          fade: true,
-          pauseOnHover: false
-        });
-        $('.waves-gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-          let $el = $('.waves-gallery img:eq(' + nextSlide + ')');
-          $('.waves').css('background-color', $el.attr('data-background'));
-          $('.waves').css('color', $el.attr('data-color'));
-          console.log(nextSlide);
-        });
-
-        $('.waves-gallery').on('click', function() {
-          $('.waves-gallery').slick('slickNext');
-        });
-      }
-        
-      return waves;
-    })();
-
-      let PARROTS = (function() {
-        let parrots = {};
-
-        parrots.init = function() {
-          let $gallery = $('.parrots .parrots-gallery');
-          $gallery.slick({
-            autoplay: true,
-            autoplaySpeed: 3000,
-            speed: 1000,
-            arrows: false,
-            fade: true,
-            pauseOnHover: true
-          });
-
-          $gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-            let $prev;
-            $('.dot').each(function() {
-              let $dot = $(this);
-
-              if ($(this).attr('data-parrot') > nextSlide) {
-                if ($prev) {
-                  $dot = $prev;
-                }
-              };
-
-              $('.dot.selected').removeClass('selected');
-              $dot.addClass('selected');
-
-              $prev = $(this);
-            });            
-          });
-          
-          $gallery.on('click', function() {
-            $gallery.slick('slickNext');
-          });
-
-          $('.dot').on('click', function() {
-            let parrot = $(this).attr('data-parrot');
-
-            $('.dot.selected').removeClass('selected');
-            $(this).addClass('selected');
-            $('.parrots .parrots-gallery').slick('slickGoTo', parrot);
-          });
-
-          $('.parrots figure').on('mousemove', function(e) {
-            UTILS.zoom(e);
-          });
-        }
-
-        return parrots;
-      })();
-
-      $(function(){
-        WAVES.init();
-        PARROTS.init();
-      });
-  </script>
+  <div class="cursor"></div>
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>

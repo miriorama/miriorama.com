@@ -1,15 +1,13 @@
 body {
-			
     margin: 0;
-
-font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 [hidden] {
-display: none !important;
+    display: none !important;
 }
 
-section {    
+section {
     width: 100%;
     min-height: calc(100% - 40px);
     padding-bottom: 40px;
@@ -26,11 +24,11 @@ section.negative {
 }
 
 .logo {
-position: fixed;
-top: 20px;
-right: 20px;
-width: 120px;
-height: 54px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: 54px;
 }
 
 nav {
@@ -63,8 +61,6 @@ nav img {
     color: #fff;
     text-decoration: none;
 }
-
-
 
 .fade-out {
     transition: opacity 1s ease-in-out;
@@ -121,6 +117,76 @@ svg.arrow-down {
     60% {transform: translateY(10px);}
 	100% {transform: translateY(0);}
 }
+
+
+/* CLIFFS */
+
+.cliffs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #f3f3f3;
+    
+    transition: 1s;
+}
+.cliffs-container {
+    display: flex;
+    flex-direction: column;
+}
+.cliffs-description {
+    align-self: flex-end;
+    transition: 1s;
+}
+
+    .cliffs-gallery {
+    width: 70vmin;
+    height: 70vmin;
+    box-shadow: 0 0 100px #0000003b;
+    position: relative;
+    cursor: pointer;
+    }
+    .cliffs-gallery img {
+        width: 100%;
+        position: absolute;
+    }
+    h2{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    line-height: 1em;
+    font-size: 2em;
+    }
+    p{
+    margin: 0;
+    }
+    
+    img:focus {
+    outline: 0;
+    }
+    .cliffs-description {
+        color: #FDA283;
+    margin-left: 30px;
+    align-self: flex-end;
+    }
+    
+    @media (max-width: 768px) {
+    
+        .waves .waves-gallery {
+        width: 80vmin;
+        height: 80vmin;
+        }
+        
+        .waves-container {
+        flex-direction: column;
+        }
+        
+        .wave-description {
+        align-self: flex-end;
+        text-align: right;
+        }
+        
+    }
+
 
 /* WAVES */
 
