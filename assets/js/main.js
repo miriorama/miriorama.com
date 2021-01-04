@@ -78,7 +78,7 @@ let WAVES = (function() {
         speed: 1000,
         arrows: false,
         fade: true,
-        pauseOnHover: true
+        pauseOnHover: false
       });
 
       $gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
